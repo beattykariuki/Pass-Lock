@@ -20,15 +20,14 @@ class Account:
 
         Account.account_list.append(self)
 
-    def delete_account(self):
-
-        '''
-        delete_account method deletes a saved account from the account_list
-        '''
-
-        Account.account_list.remove(self)
-
     
+    @classmethod
+    def find_by_name(cls,app_account):
+
+
+        for account in cls.account_list:
+            if account.app_account == app_account:
+                return account
 
     @classmethod
     def display_account(cls):
