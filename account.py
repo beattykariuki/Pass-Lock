@@ -89,8 +89,3 @@ class Sites:
         '''
         return cls.site_list
 
-    @classmethod
-    def copy_app_account(cls,app_account):
-        account_found = Account.find_by_app_account(app_account)
-        pyperclip.copy(account_found.app_account)
-
