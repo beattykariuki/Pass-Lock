@@ -66,36 +66,28 @@ class Sites:
         self.site = site
         self.sitepass = sitepass
 
-    def save_sitepass(self):
+    def save_site(self):
 
         '''
-        save_contact method saves contact objects into contact_list
+        save_site method saves site objects into site_list
         '''
 
-        Account.account_list.append(self)
+        Sites.site_list.append(self)
 
-    def delete_account(self):
+    def delete_site(self):
 
         '''
-        delete_account method deletes a saved account from the account_list
+        delete_site method deletes a saved site from the site_list
         '''
 
-        Account.account_list.remove(self)
-
-    @classmethod
-    def find_by_name(cls,app_account):
-
-
-        for account in cls.account_list:
-            if account.app_account == app_account:
-                return account
+       Sites.site_list.remove(self)
 
     @classmethod
     def display_account(cls):
         '''
         method that returns the account list
         '''
-        return cls.account_list
+        return cls.site_list
 
     @classmethod
     def copy_app_account(cls,app_account):
