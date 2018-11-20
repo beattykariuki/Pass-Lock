@@ -6,7 +6,7 @@ class Account:
     Class that generates new instances of the  Accounts.
     """
 
-    account_list = [] # Empty contact list
+    account_list = [] # Empty account list
 
     def __init__(self,app_account,password):
 
@@ -17,9 +17,7 @@ class Account:
 
     def save_account(self):
 
-        '''
-        save_contact method saves contact objects into contact_list
-        '''
+        
 
         Account.account_list.append(self)
 
@@ -52,12 +50,12 @@ class Account:
         pyperclip.copy(account_found.app_account)
 
 
-class Sites:
+class Site:
     """
     Class that generates new instances of the  sites and passwords.
     """
 
-    site_list = [] # Empty contact list
+    site_list = [] 
 
     def __init__(self,site,sitepass):
 
@@ -68,24 +66,5 @@ class Sites:
 
     def save_site(self):
 
-        '''
-        save_site method saves site objects into site_list
-        '''
-
-        Sites.site_list.append(self)
-
-    def delete_site(self):
-
-        '''
-        delete_site method deletes a saved site from the site_list
-        '''
-
-        Sites.site_list.remove(self)
-
-    @classmethod
-    def display_account(cls):
-        '''
-        method that returns the account list
-        '''
-        return cls.site_list
-
+        Site.site_list.append(self)
+    

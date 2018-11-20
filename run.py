@@ -55,7 +55,7 @@ def main():
     print('\n')
 
     while True:
-        print("Use these short codes : cc - create a new Account, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+        print("Use these short codes : cc - create a new Account, dc - display records, fc -find a records, ex -exit the record list ")
 
         short_code = input().lower()
 
@@ -71,16 +71,16 @@ def main():
 
             save_site(create_site(site,sitepass)) 
             print ('\n')
-            print(f"New Details {f_name} {l_name} added")
+            print(f"New Details {site} {sitepass} added")
             print ('\n')
 
         elif short_code == 'dc':
 
-            if display_contacts():
-                print("Here is a list of all your contacts")
+            if display_sites():
+                print("Here is a list of all your sites")
                 print('\n')
 
-                for contact in display_contacts():
+                for contact in display_sites():
                     print(f"{contact.first_name} {contact.last_name} .....{contact.phone_number}")
 
                     print('\n')

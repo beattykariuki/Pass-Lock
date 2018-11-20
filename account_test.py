@@ -1,7 +1,8 @@
 import unittest #The unittest module imported
 from account import Account #Imported our account class
+from account import Site #Imported the sites class !!
 import pyperclip
-
+ 
 
 class TestAccount(unittest.TestCase):
 
@@ -9,7 +10,7 @@ class TestAccount(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_account = Account("Betty","goodvibez") # create contact object
+        self.new_account = Account("Betty","goodvibez")
 
     def tearDown(self):
             '''
@@ -47,10 +48,10 @@ class TestAccount(unittest.TestCase):
             test_delete_account to test if we can remove a account from our account list
             '''
             self.new_account.save_account()
-            test_account = Account("","") # new contact
+            test_account = Account("","") 
             test_account.save_account()
 
-            self.new_account.delete_account()# Deleting a contact object
+            self.new_account.delete_account()
             self.assertEqual(len(Account.account_list),1)
 
 
@@ -82,6 +83,36 @@ class TestAccount(unittest.TestCase):
 
         self.assertEqual(self.new_account.app_account,pyperclip.paste())
     '''
+
+class TestSite(unittest.TestCase):
+
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_account = Site("facebook","wakanda") 
+    
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_account.site,"facebook")
+        self.assertEqual(self.new_account.sitepass,"wakanda")
+
+    def test_save_site(self):
+       
+        self.new_account.save_site() 
+        self.assertEqual(len(Site.site_list),1)
+
+
+    def test_save_multiple_site(self):
+                 
+        self.new_account.save_site()
+        test_account = Site("","")
+        test_account.save_site()
+        self.assertEqual(len(Site.site_list),2)
+                
 
 if __name__ == '__main__':
     unittest.main()
