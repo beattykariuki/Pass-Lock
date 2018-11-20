@@ -1,0 +1,37 @@
+class Account:
+    """
+    Class that generates new instances of the  Accounts.
+    """
+
+    account_list = [] # Empty contact list
+
+    def __init__(self,app_account,password):
+
+      # docstring removed for simplicity
+
+        self.app_account = app_account
+        self.password = password
+
+    def save_account(self):
+
+        '''
+        save_contact method saves contact objects into contact_list
+        '''
+
+        Account.account_list.append(self)
+
+    def delete_account(self):
+
+        '''
+        delete_account method deletes a saved account from the account_list
+        '''
+
+        Account.account_list.remove(self)
+
+    @classmethod
+    def find_by_name(cls,app_account):
+
+
+        for account in cls.account_list:
+            if account.app_account == app_account:
+                return account
