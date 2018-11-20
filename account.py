@@ -1,3 +1,6 @@
+import pyperclip
+
+
 class Account:
     """
     Class that generates new instances of the  Accounts.
@@ -42,3 +45,8 @@ class Account:
         method that returns the account list
         '''
         return cls.account_list
+
+    @classmethod
+    def copy_app_account(cls,app_account):
+        account_found = Account.find_by_app_account(app_account)
+        pyperclip.copy(account_found.app_account)
