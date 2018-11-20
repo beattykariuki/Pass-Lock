@@ -41,14 +41,21 @@ def display_accounts():
 
 
 def main():
-    print("Hello Welcome to your account setup . What is your name?")
-    user_name = input()
+    print("WELCOME TO BETTYS' APP SIGN UP TO CONTINUE")
 
-    print(f"Hello {user_name}. what would you like to do?")
+    print("What is your name?")
+    app_account = input()
+
+    print("Enter new password")
+    password = input()
+
+    print("YAAAS !!!  BETTY JUST SIGNED YOU UP")
+
+    print(f"Hello {app_account}. what would you like to do?")
     print('\n')
 
     while True:
-        print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+        print("Use these short codes : cc - create a new Account, dc - display contacts, fc -find a contact, ex -exit the contact list ")
 
         short_code = input().lower()
 
@@ -56,18 +63,11 @@ def main():
             print("New Contact")
             print("-"*10)
 
-            print ("First name ....")
-            f_name = input()
+            print ("ENTER SITE ....")
+            site = input()
 
-            print("Last name ...")
+            print(f"ENTER PASS FOR {site}  ...")
             l_name = input()
-
-            print("Phone number ...")
-            p_number = input()
-
-            print("Email address ...")
-            e_address = input()
-
 
             save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new contact.
             print ('\n')
