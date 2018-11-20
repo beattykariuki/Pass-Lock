@@ -60,14 +60,14 @@ def main():
         short_code = input().lower()
 
         if short_code == 'cc':
-            print("New Contact")
+            print("New Record")
             print("-"*10)
 
             print ("ENTER SITE ....")
             site = input()
 
             print(f"ENTER PASS FOR {site}  ...")
-            l_name = input()
+            sitepass = input()
 
             save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new contact.
             print ('\n')
