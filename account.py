@@ -35,3 +35,10 @@ class Account:
         for account in cls.account_list:
             if account.app_account == app_account:
                 return account
+
+    @classmethod
+    def display_account(cls):
+        '''
+        method that returns the account list
+        '''
+        return cls.account_list

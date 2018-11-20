@@ -66,7 +66,12 @@ class TestAccount(unittest.TestCase):
 
         self.assertEqual(found_account.app_account,test_account.app_account)
 
+    def test_display_all_account(self):
+        '''
+        method that returns a list of all account saved
+        '''
 
+        self.assertEqual(Account.display_account(),Account.account_list)
 
 
 if __name__ == '__main__':
