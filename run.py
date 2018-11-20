@@ -69,9 +69,9 @@ def main():
             print(f"ENTER PASS FOR {site}  ...")
             sitepass = input()
 
-            save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new contact.
+            save_site(create_site(site,sitepass)) 
             print ('\n')
-            print(f"New Contact {f_name} {l_name} created")
+            print(f"New Details {f_name} {l_name} added")
             print ('\n')
 
         elif short_code == 'dc':

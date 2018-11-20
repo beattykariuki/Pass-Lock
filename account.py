@@ -80,7 +80,7 @@ class Sites:
         delete_site method deletes a saved site from the site_list
         '''
 
-       Sites.site_list.remove(self)
+        Sites.site_list.remove(self)
 
     @classmethod
     def display_account(cls):
