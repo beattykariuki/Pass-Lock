@@ -5,7 +5,12 @@ class Account:
 
     account_list = [] # Empty contact list
 
-    
+    def __init__(self,app_account,password):
+
+      # docstring removed for simplicity
+
+        self.app_account = app_account
+        self.password = password
 
     def save_account(self):
 
