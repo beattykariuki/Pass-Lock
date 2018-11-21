@@ -55,7 +55,7 @@ class Site:
     Class that generates new instances of the  sites and passwords.
     """
 
-    site_list = [] 
+    site_list = []
 
     def __init__(self,site,sitepass):
 
@@ -63,8 +63,21 @@ class Site:
 
         self.site = site
         self.sitepass = sitepass
+    
+    
+    def tearDown(self):
+           
+        Site.site_list = []
 
     def save_site(self):
 
         Site.site_list.append(self)
+
+    
+    def test_save_multiple_site(self):
+            
+            self.new_account.save_site()
+            test_account = Site("","")
+            test_account.save_site()
+            self.assertEqual(len(Site.site_list),2)
     

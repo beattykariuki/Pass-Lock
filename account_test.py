@@ -106,13 +106,7 @@ class TestSite(unittest.TestCase):
         self.assertEqual(len(Site.site_list),1)
 
 
-    def test_save_multiple_site(self):
-                 
-        self.new_account.save_site()
-        test_account = Site("","")
-        test_account.save_site()
-        self.assertEqual(len(Site.site_list),2)
-                
+   
 
 if __name__ == '__main__':
     unittest.main()
